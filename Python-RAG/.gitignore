@@ -1,0 +1,250 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Machine Learning / AI specific
+models/
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.npz
+*.npy
+
+# Sentence Transformers cache
+.cache/
+sentence_transformers/
+
+# FastAPI / Uvicorn
+.uvicorn/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# PostgreSQL
+*.sql
+
+# Logs
+logs/
+*.log
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows specific
+*.lnk
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Configuration files with sensitive data
+config.ini
+settings.json
+secrets.json
+
+# API keys and credentials
+.env.local
+.env.production
+.env.development
+.env.staging
+
+# Test files
+test_*.py
+*_test.py
+tests/
+testing/
+
+# Documentation build
+docs/build/
+site/
+
+# Backup files
+*.backup
+*.bak
+
+# RAG specific files
+# Vector database files
+*.faiss
+*.index
+
+# Document uploads
+uploads/
+documents/
+data/
+
+# Model checkpoints
+checkpoints/
+saved_models/
+
+# Embeddings cache
+embeddings_cache/
+.embeddings/
+
+# API testing
+api_test_results/
+postman_collections/
+
+# Performance profiling
+*.prof
+*.cprofile
+
+# Memory profiling
+*.mprofile
+
+# Docker
+.dockerignore
+Dockerfile.dev
+
+# Local development
+local/
+dev/
+
+# Secrets and keys
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+
+# Database backups
+*.dump
+*.backup
+*.sql.gz
+
+# Temporary development files
+scratch/
+temp/
+tmp/
