@@ -1,10 +1,38 @@
 
+using Backend.Interfaces;
+using Backend.Services;
+using Microsoft.AspNetCore.DataProtection;
+using Newtonsoft.Json;
+using Serilog;
+using Serilog.Core;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
+var logger = new LoggerConfiguration()
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 
+builder.Host.UseSerilog(logger);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo("/keys")).SetApplicationName("AIAPI");
+
+builder.Services.AddControllers().
+    AddNewtonsoftJson(options =>
+    {
+        options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+    });
+
+
+builder.Services.AddHttpClient<IRagService, RagService>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:8000");
+});
 
 var app = builder.Build();
 
@@ -20,24 +48,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.MapGet("/", () => "Welcome to Backend API! Visit /swagger for documentation.")
-    .WithName("GetRoot")
-    .WithSummary("API Root")
-    .WithDescription("Returns a welcome message")
-    .WithOpenApi();
-
-app.MapGet("/api/health", () => new
-{
-    Status = "Healthy",
-    Timestamp = DateTime.UtcNow,
-    Version = "1.0.0"
-})
-    .WithName("GetHealth")
-    .WithSummary("Health Check")
-    .WithDescription("Returns the health status of the API")
-    .WithOpenApi();
-
+app.MapControllers();
 
 app.Run();
 
